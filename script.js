@@ -31,13 +31,12 @@ document.getElementById('booking-form').addEventListener('submit', function(even
     })
     .catch((error) => {
         console.error('Error:', error);
-    });
-
+    }); 
 });
 
 //แสดง alert ว่าส่งข้อมูลสำเร็จ
 function myFunction() {
-  alert("ทําการจองสำเร็จ กรุณารอการติดต่อกลับจากทางร้านค่ะ");
-  window.location.href = "test.html";
+    alert("ทําการจองสำเร็จ กรุณารอการติดต่อกลับจากทางร้านค่ะ");
+    window.location.href = "test.html";
 }
 
