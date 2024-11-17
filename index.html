@@ -1,28 +1,52 @@
 <!DOCTYPE html>
-<html lang="th">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ร้านจองคิว</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Form</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <h1>ร้านจองคิว</h1>
-        <form id="reservationForm">
-            <label for="name">Name:</label>
-            <input type="text" id="name" required>
-        
-            <label for="date">Date:</label>
-            <input type="date" id="date" required>
-        
-            <label for="time">Time:</label>
-            <input type="time" id="time" required>
-        
-            <button type="submit">Submit</button>
-        </form>
-    </div>
+  <div class="container">
+    <h1>จองคิวเข้ารับบริการ</h1>
+    <form id="booking-form">
+      <div class="form-group">
+        <label for="name">ชื่อ-นามสกุล:</label>
+        <input type="text" id="name" name="name" required placeholder="กรุณาใส่ชื่อ">
+      </div>
 
-    <script src="script.js"></script>
+      <div class="form-group">
+        <label for="date">วันที่เข้ารับบริการ:</label>
+        <input type="date" id="date" name="date" required>
+      </div>
+
+      <div class="form-group">
+        <label for="time">เวลา (ติดต่อกลับเพื่อยืนยันอีกครั้ง):</label>
+        <input type="time" id="time" name="time" required>
+      </div>
+
+      <div class="form-group">
+        <label for="service">บริการ:</label>
+        <select id="service" name="service" required>
+          <option value="">กรุณาเลือกบริการ</option>
+          <option value="คอสรักษา นวดน้ำมัน ตอกเส้น ประคบสมุนไพร">✅คอสรักษา นวดน้ำมัน ตอกเส้น ประคบสมุนไพร</option>
+          <option value="นวดนํ้ามันอโรม่า">✅นวดนํ้ามันอโรม่า</option>
+          <option value="เผายา">✅เผายา</option>
+          <option value="สักยาแก้อาการ">✅สักยาแก้อาการ</option>
+          <option value="นวดเท้าแช่น้ำสมุนไพร">✅นวดเท้าแช่น้ำสมุนไพร </option>
+          <option value="คอร์ส-มดลูกนวดประคบท้อง+เผายา">✅คอร์ส-มดลูกนวดประคบท้อง+เผายา</option>
+          <option value="ประคบสมุนไพร+อบสมุนไพร">✅ประคบสมุนไพร+อบสมุนไพร</option>
+          <option value="อยู่ไฟหลังคลอด">✅อยู่ไฟหลังคลอด</option>
+          <option value="อบไอน้ำสมุนไพร">✅อบไอน้ำสมุนไพร </option>
+          <option value="ปล่อยเลือด (กรอกเลือด)">✅ปล่อยเลือด (กรอกเลือด) </option>
+          <option value="กักลม (ครอบแก้ว)">✅กักลม (ครอบแก้ว)</option>
+          <option value="บ่งต้อด้วยหนามหวาย">✅บ่งต้อด้วยหนามหวาย</option>
+          <option value="นวดคัดเต้านม">✅นวดคัดเต้านม</option>
+        </select>
+      </div>
+      <button type="submit" onclick="myFunction()" class="submit-btn">จองคิว</button>
+    </form>
+    </div>
+  <script src="script.js"></script>
 </body>
 </html>
