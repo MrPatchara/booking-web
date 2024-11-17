@@ -1,4 +1,5 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener('DOMContentLoaded', function() {
+    // ตั้งค่า event listener เมื่อฟอร์มถูกส่ง
     document.querySelector("form").addEventListener("submit", function(event) {
         event.preventDefault();
 
