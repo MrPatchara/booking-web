@@ -1,32 +1,27 @@
-document.getElementById('bookingForm').addEventListener('submit', function(event) {
+document.querySelector("form").addEventListener("submit", function(event) {
     event.preventDefault();
-  
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const service = document.getElementById('service').value;
-    const time = document.getElementById('time').value;
-  
-    const formData = {
-      name: name,
-      phone: phone,
-      service: service,
-      time: time
+
+    // เก็บข้อมูลจากฟอร์ม
+    var formData = {
+        name: document.getElementById('name').value,
+        date: document.getElementById('date').value,
+        time: document.getElementById('time').value
     };
-  
-    fetch('https://script.google.com/macros/s/AKfycbxZMrPltI0WQ9DvwguDyD5ViUdXIgujpBjwoVSZ6mlXyJbioRF5cIKOf6Mf76fXB7KdZg/exec', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData)
+
+    // ส่งข้อมูลไปยัง Google Apps Script Web App
+    fetch('https://script.google.com/macros/s/AKfycbyeCz1Iw146wVhZBNM1JZY6fvKPQqcL6VYExbQLpWJ5q1ydlrD5KwqXuNIkAa9_v0C0/exec', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
     })
     .then(response => response.json())
     .then(data => {
-      alert('จองคิวสำเร็จ');
-      document.getElementById('bookingForm').reset();
+        console.log('Success:', data);
+        alert(data.message);  // แสดงข้อความตอบกลับจาก Google Apps Script
     })
-    .catch(error => {
-      alert('เกิดข้อผิดพลาด: ' + error);
+    .catch((error) => {
+        console.error('Error:', error);
     });
-  });
-  
+});

@@ -1,35 +1,28 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>จองคิวร้าน</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ร้านจองคิว</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>จองคิวสำหรับเข้ารับบริการ</h1>
-    <form id="bookingForm">
-      <label for="name">ชื่อ:</label>
-      <input type="text" id="name" name="name" required>
+    <div class="container">
+        <h1>ร้านจองคิว</h1>
+        <form id="bookingForm">
+            <label for="name">ชื่อ:</label>
+            <input type="text" id="name" name="name" required>
 
-      <label for="phone">เบอร์โทร:</label>
-      <input type="text" id="phone" name="phone" required>
+            <label for="date">วันที่:</label>
+            <input type="date" id="date" name="date" required>
 
-      <label for="service">บริการที่ต้องการ:</label>
-      <select id="service" name="service" required>
-        <option value="บริการ 1">บริการ 1</option>
-        <option value="บริการ 2">บริการ 2</option>
-        <option value="บริการ 3">บริการ 3</option>
-      </select>
+            <label for="time">เวลา:</label>
+            <input type="time" id="time" name="time" required>
 
-      <label for="time">เวลาที่ต้องการ:</label>
-      <input type="datetime-local" id="time" name="time" required>
+            <button type="submit">จองคิว</button>
+        </form>
+    </div>
 
-      <button type="submit">จองคิว</button>
-    </form>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
